@@ -1,0 +1,56 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+    <title>Details</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+</head>
+<body>
+    <nav class="navbar navbar-dark bg-dark justify-content-between">
+        <form action="/home">
+            <button style="border: 0px solid transparent;" class="btn btn-outline-primary">HOME</button>
+        </form>
+        <form class="form-inline" action="/logout">
+            <label style="color:white; padding-right: 10px">Hi admin!</label>
+            <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Logout</button>
+        </form>
+    </nav>
+    <div class="jumbotron" style="padding: 3rem 2rem;">
+        <center><h1 style="height: 10px;">Organ Donation and Procurement Management System</h1></center>
+    </div>
+
+    <form id="addUserPhoneForm" action="/add_User_phone_no_page" method="POST" class="container" onsubmit="return validatePhoneNumber()">
+        <table class="table table-striped table-sm">
+            <tr>
+                <th scope="row">User_ID</th>
+                <td>
+                    <input class="form-control" name="User_ID">
+                </td>
+            </tr>
+            <tr>
+                <th scope="row">phone_no</th>
+                <td>
+                    <input id="phone_no" class="form-control" name="phone_no" placeholder="Enter 10 digits number">
+                    <small id="phoneNoError" class="form-text text-danger"></small>
+                </td>
+            </tr>
+        </table>
+        <center><button class="btn btn-success" type="submit">Add User phone no</button></center>
+    </form>
+
+    <script>
+        function validatePhoneNumber() {
+            var phoneNumberInput = document.getElementById('phone_no');
+            var phoneNumber = phoneNumberInput.value.trim();
+
+            if (phoneNumber.length !== 10 || isNaN(phoneNumber)) {
+                document.getElementById('phoneNoError').textContent = 'Please enter a valid 10-digit phone number.';
+                return false; // Prevent form submission
+            }
+
+            return true; // Allow form submission
+        }
+    </script>
+
+</body>
+</html>

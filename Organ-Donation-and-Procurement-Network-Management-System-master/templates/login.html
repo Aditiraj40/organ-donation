@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+
+<html>
+	<head>
+		<title>Login Page</title>
+	</head>
+	<style>
+		.login-background {
+			background-image: url('https://www.healthcareradius.in/cloud/2021/11/15/unnamed-file.DOC-2.jpg');
+			background-size: cover;
+			/* You can add more background properties here if needed */
+		}
+	</style>
+	<body class="login-background">
+		<div class="jumbotron" style="padding: 3rem 2rem;">
+					<center><h1 style="height: 10px;">Organ Donation and Procurement Management System</h1></center>
+		</div>
+		<!-- <div><center>
+			<img src="https://i.pinimg.com/originals/6c/b0/49/6cb04986eb06c1cca5543f2e8bb3810a.jpg" width="700" height="700"></center>
+		</div>	 -->
+		
+		<form class="container" action = "/login" method = "POST" style="padding-left: 400px; ">
+				<div class="form-group" >
+					<label style="font-weight: bold;">Username</label>
+					<input name = "username" type="text" class="form-control" id="inputUsername" aria-describedby="emailHelp" placeholder="Enter username" style="width: 300px;">
+				</div>
+				<div class="form-group" >
+					<label style="font-weight: bold;">Password</label>
+					<input name = "password" type="password" class="form-control" id="inputPassword" placeholder="Password" style="width: 300px;">
+				</div>
+				<button type="submit" class="btn btn-primary">Submit</button>
+		</form>
+	</body>
+</html>
